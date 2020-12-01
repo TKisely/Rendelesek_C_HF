@@ -23,11 +23,10 @@ int main() {
     hozzaadasEtelekhez(&elsoRend.etelek,&masodikEtel);
     hozzaadasEtelekhez(&elsoRend.etelek,&harmadikEtel);
 
-    etelKiirasKonzolra(elsoEtel);
-    rendelesKiirasKonzolra(elsoRend);
     printf("=================\n");
     etelekListajanakKiirasaKonzolra(elsoRend.etelek);
     rendelesVegosszege(elsoRend.etelek);
+    etlapKiirasaKonzolra();
 
 
     printf("Lefutottam\n");
