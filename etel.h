@@ -7,4 +7,8 @@ typedef struct Etel {
     int ar;
 } Etel;
 
+void etelKiirasKonzolra(const Etel etel){
+    printf("%d id %d ar \n",etel.id,etel.ar);
+}
+
 #endif
