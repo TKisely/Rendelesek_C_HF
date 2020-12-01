@@ -3,4 +3,4 @@ project(rendelesek C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(rendelesek main.c)
+add_executable(rendelesek main.c fajlkezeles.h)
