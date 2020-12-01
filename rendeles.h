@@ -5,6 +5,7 @@
 
 #include "etel.h"
 
+static unsigned int LEGNAGYOBB_ID=0;
 
 typedef struct Rendeles {
     unsigned int id;

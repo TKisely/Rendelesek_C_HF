@@ -4,7 +4,7 @@
 int main() {
     Rendeles elsoRend;
     elsoRend.asztal_id=5;
-    elsoRend.id=1;
+    elsoRend.id=LEGNAGYOBB_ID++;
     elsoRend.tetelek_szama=3;
     elsoRend.vegosszeg=5000;
     elsoRend.etelek=NULL;
@@ -18,6 +18,7 @@ int main() {
     Etel harmadikEtel;
     harmadikEtel.id=3;
     harmadikEtel.ar=700;
+    Etel negyedik = {4,"Valami",600};
 
     hozzaadasEtelekhez(&elsoRend.etelek,&elsoEtel);
     hozzaadasEtelekhez(&elsoRend.etelek,&masodikEtel);
@@ -27,6 +28,14 @@ int main() {
     etelekListajanakKiirasaKonzolra(elsoRend.etelek);
     rendelesVegosszege(elsoRend.etelek);
     etlapKiirasaKonzolra();
+    etlaprolIDAlapjanKiiras(6);
+    etlaprolIDAlapjanKiiras(11);
+
+    printf("%d es %d \n",etlaprolArIDAlapjan(6),etlaprolArIDAlapjan(11));
+
+    struct Etel talalt = etlaprolEtelIDAlapjan(6);
+
+    printf("%d %s %d\n",talalt.id,talalt.nev,talalt.ar);
 
 
     printf("Lefutottam\n");
