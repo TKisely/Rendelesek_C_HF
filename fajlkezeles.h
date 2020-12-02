@@ -113,7 +113,6 @@ void rendelesNyugta(const struct Rendeles rend){
     char teljesIdo[30];
     char nyugtaCim[35];
     char fajl_neve[38];
-    char fogyasztas[30];
     const struct EtelekListaja *fogyasztottEtelek=rend.etelek;
 
     sprintf(teljesIdo,"%d_%02d_%02d_%02d_%02d",tm.tm_year+1900, tm.tm_mon+1,tm.tm_mday,tm.tm_hour, tm.tm_min);
@@ -130,12 +129,14 @@ void rendelesNyugta(const struct Rendeles rend){
 
     printf("\nNyugta megnyitva\n");
 
+    fprintf(fajl,"%d - Szamu rendeles\t\t %s-kor lezarva\n\n",rend.id,teljesIdo);
     while (fogyasztottEtelek){
-        fprintf(fajl,"%s - %d\n",fogyasztottEtelek->etel->nev,fogyasztottEtelek->etel->ar);
+        fprintf(fajl,"%s \t %d\n",fogyasztottEtelek->etel->nev,fogyasztottEtelek->etel->ar);
 
         fogyasztottEtelek=fogyasztottEtelek->kovetkezo;
     }
-    printf(fogyasztas);
+
+    fprintf(fajl,"Vegosszeg: \t %d", rendelesVegosszege(rend.etelek));
     fclose(fajl);
     printf("Nyugta zarva");
 
