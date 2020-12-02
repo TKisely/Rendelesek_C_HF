@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "fajlkezeles.h"
+#include "menu_nezetek.h"
 
 int main() {
     Rendeles elsoRend;
@@ -52,12 +53,13 @@ int main() {
 
     printf("%d %s %d\n",talalt.id,talalt.nev,talalt.ar);
 
-    printf("\n=================\n");
+//    printf("\n=================\n");
+//
+//    rendelesNyugta(elsoRend);
+//    printf("\n=================\n");
+//    rendelesNyugta(masodikRend);
 
-    rendelesNyugta(elsoRend);
-    printf("\n=================\n");
-    rendelesNyugta(masodikRend);
-
+    fomenu_nezet();
     printf("\n\nLefutottam\n");
     return 0;
 }
