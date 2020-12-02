@@ -107,15 +107,38 @@ void etlapKiirasaKonzolra(){
 }
 
 void rendelesNyugta(const struct Rendeles rend){
-    //FILE *fajl;
+    FILE *fajl;
     time_t ido = time(NULL);
     struct tm tm = *localtime(&ido);
     char teljesIdo[30];
     char nyugtaCim[35];
+    char fajl_neve[38];
+    char fogyasztas[30];
+    const struct EtelekListaja *fogyasztottEtelek=rend.etelek;
 
     sprintf(teljesIdo,"%d_%02d_%02d_%02d_%02d",tm.tm_year+1900, tm.tm_mon+1,tm.tm_mday,tm.tm_hour, tm.tm_min);
     sprintf(nyugtaCim,"%d__%s",rend.id,teljesIdo);
-    printf(nyugtaCim);
+    sprintf(fajl_neve,"%s.%s",nyugtaCim,"txt");
+    printf(fajl_neve);
+
+    fajl=fopen(fajl_neve,"w");
+    if (fajl==NULL){
+        printf("\nSikertelen nyugta\n");
+        fclose(fajl);
+        return;
+    }
+
+    printf("\nNyugta megnyitva\n");
+
+    while (fogyasztottEtelek){
+        fprintf(fajl,"%s - %d\n",fogyasztottEtelek->etel->nev,fogyasztottEtelek->etel->ar);
+
+        fogyasztottEtelek=fogyasztottEtelek->kovetkezo;
+    }
+    printf(fogyasztas);
+    fclose(fajl);
+    printf("Nyugta zarva");
+
 }
 
 #endif //FAJLKEZELES_H

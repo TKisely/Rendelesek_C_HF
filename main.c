@@ -19,17 +19,23 @@ int main() {
     Etel elsoEtel;
     elsoEtel.id=1;
     elsoEtel.ar=600;
+    strcpy(elsoEtel.nev,"ELSOETEL");
     Etel masodikEtel;
     masodikEtel.id=2;
     masodikEtel.ar=450;
+    strcpy(masodikEtel.nev,"MASODIKETEL");
     Etel harmadikEtel;
     harmadikEtel.id=3;
     harmadikEtel.ar=700;
+    strcpy(harmadikEtel.nev,"HARMADIKETEL");
     Etel negyedik = {4,"Valami",600};
 
     hozzaadasEtelekhez(&elsoRend.etelek,&elsoEtel);
     hozzaadasEtelekhez(&elsoRend.etelek,&masodikEtel);
     hozzaadasEtelekhez(&elsoRend.etelek,&harmadikEtel);
+
+    hozzaadasEtelekhez(&masodikRend.etelek,&masodikEtel);
+    hozzaadasEtelekhez(&masodikRend.etelek,&harmadikEtel);
 
     printf("\n=================\n");
     etelekListajanakKiirasaKonzolra(elsoRend.etelek);
