@@ -3,6 +3,7 @@
 #define FAJLKEZELES_H
 #include "rendeles.h"
 #include <string.h>
+#include <time.h>
 
 void rendelesFajlbaIras(const Rendeles rend){
 
@@ -103,6 +104,18 @@ void etlapKiirasaKonzolra(){
     }
 
     fclose(fajl);
+}
+
+void rendelesNyugta(const struct Rendeles rend){
+    //FILE *fajl;
+    time_t ido = time(NULL);
+    struct tm tm = *localtime(&ido);
+    char teljesIdo[30];
+    char nyugtaCim[35];
+
+    sprintf(teljesIdo,"%d_%02d_%02d_%02d_%02d",tm.tm_year+1900, tm.tm_mon+1,tm.tm_mday,tm.tm_hour, tm.tm_min);
+    sprintf(nyugtaCim,"%d__%s",rend.id,teljesIdo);
+    printf(nyugtaCim);
 }
 
 #endif //FAJLKEZELES_H

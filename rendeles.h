@@ -25,6 +25,8 @@ void rendelesKiirasKonzolra(const Rendeles rend){
     printf("%d id %d asztal %d tetelek %d vegosszeg \n", rend.id, rend.asztal_id, rend.tetelek_szama, rend.vegosszeg);
 }
 
+
+
 int hozzaadasEtelekhez(struct EtelekListaja **kezd, struct Etel *ujEtel){
     struct EtelekListaja* ujLista = (struct EtelekListaja*) malloc(sizeof(struct EtelekListaja));
     ujLista->etel=ujEtel;

@@ -9,6 +9,13 @@ int main() {
     elsoRend.vegosszeg=5000;
     elsoRend.etelek=NULL;
 
+    Rendeles masodikRend;
+    masodikRend.asztal_id=5;
+    masodikRend.id=LEGNAGYOBB_ID++;
+    masodikRend.tetelek_szama=3;
+    masodikRend.vegosszeg=5000;
+    masodikRend.etelek=NULL;
+
     Etel elsoEtel;
     elsoEtel.id=1;
     elsoEtel.ar=600;
@@ -24,12 +31,14 @@ int main() {
     hozzaadasEtelekhez(&elsoRend.etelek,&masodikEtel);
     hozzaadasEtelekhez(&elsoRend.etelek,&harmadikEtel);
 
-    printf("=================\n");
+    printf("\n=================\n");
     etelekListajanakKiirasaKonzolra(elsoRend.etelek);
     rendelesVegosszege(elsoRend.etelek);
     etlapKiirasaKonzolra();
     etlaprolIDAlapjanKiiras(6);
     etlaprolIDAlapjanKiiras(11);
+
+    printf("\n=================\n");
 
     printf("%d es %d \n",etlaprolArIDAlapjan(6),etlaprolArIDAlapjan(11));
 
@@ -37,7 +46,12 @@ int main() {
 
     printf("%d %s %d\n",talalt.id,talalt.nev,talalt.ar);
 
+    printf("\n=================\n");
 
-    printf("Lefutottam\n");
+    rendelesNyugta(elsoRend);
+    printf("\n=================\n");
+    rendelesNyugta(masodikRend);
+
+    printf("\n\nLefutottam\n");
     return 0;
 }
