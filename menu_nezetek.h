@@ -18,4 +18,6 @@ void rendeles_lezarasa_menu_nezet();
 
 void etlap_menu_nezet();
 
+void hibas_bemenet();
+
 #endif //MENU_NEZETEK_H

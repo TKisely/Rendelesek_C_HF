@@ -61,3 +61,7 @@ void etlap_menu_nezet(){
     printf( ANSI_COLOR_RED"\n[0] - Kilepes" ANSI_COLOR_RESET "\n");
 
 }
+
+void hibas_bemenet(){
+    printf(ANSI_COLOR_RED"\n\t\tHIBAS BEMENET"ANSI_COLOR_RESET"\n");
+}

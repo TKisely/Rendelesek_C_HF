@@ -9,5 +9,7 @@ void rendelesek_kezelo();
 
 void fomenu_kezelo();
 
+void rendeles_kezelo();
+
 
 #endif //MENU_KEZELO_H

@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include "fajlkezeles.h"
 #include "menu_nezetek.h"
+#include "menu_kezelo.h"
+#include "rendeles_lista.h"
+
+
 
 int main() {
     Rendeles elsoRend;
@@ -14,6 +18,10 @@ int main() {
     masodikRend.id=LEGNAGYOBB_ID++;
     masodikRend.vegosszeg=5000;
     masodikRend.etelek=NULL;
+
+    Rendeles_Lista* rendelesekListaja=NULL;
+
+
 
     Etel elsoEtel;
     elsoEtel.id=1;
@@ -45,6 +53,15 @@ int main() {
 
     printf("\n=================\n");
 
+    printf("ITT ADOM HOZZA A RENDELESEKET");
+
+    uj_rendeles_felvitele(&rendelesekListaja,&elsoRend);
+    uj_rendeles_felvitele(&rendelesekListaja,&masodikRend);
+
+    rendelesek_listazasa(rendelesekListaja);
+
+    printf("\n=================\n");
+
     printf("%d es %d \n",etlaprolArIDAlapjan(6),etlaprolArIDAlapjan(11));
 
     struct Etel talalt = etlaprolEtelIDAlapjan(6);
@@ -57,12 +74,8 @@ int main() {
 //    printf("\n=================\n");
 //    rendelesNyugta(masodikRend);
 
-    fomenu_nezet();
-    meglevo_rendelesek_listazasa_menu_nezet();
-    rendeles_menu_nezet();
-    uj_rendeles_menu_nezet();
-    rendeles_lezarasa_menu_nezet();
-    etlap_menu_nezet();
+    fomenu_kezelo();
+
     printf("\n\nLefutottam\n");
     return 0;
 }
