@@ -10,7 +10,6 @@ static unsigned int LEGNAGYOBB_ID=0;
 typedef struct Rendeles {
     unsigned int id;
     unsigned int asztal_id;
-    unsigned int tetelek_szama;
     unsigned int vegosszeg;
     struct EtelekListaja *etelek;
 } Rendeles;
@@ -22,7 +21,7 @@ typedef struct EtelekListaja{
 
 
 void rendelesKiirasKonzolra(const Rendeles rend){
-    printf("%d id %d asztal %d tetelek %d vegosszeg \n", rend.id, rend.asztal_id, rend.tetelek_szama, rend.vegosszeg);
+    printf("%d id %d asztal %d tetelek %d vegosszeg \n", rend.id, rend.asztal_id, rend.vegosszeg);
 }
 
 

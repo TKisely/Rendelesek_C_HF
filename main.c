@@ -6,14 +6,12 @@ int main() {
     Rendeles elsoRend;
     elsoRend.asztal_id=5;
     elsoRend.id=LEGNAGYOBB_ID++;
-    elsoRend.tetelek_szama=3;
     elsoRend.vegosszeg=5000;
     elsoRend.etelek=NULL;
 
     Rendeles masodikRend;
     masodikRend.asztal_id=5;
     masodikRend.id=LEGNAGYOBB_ID++;
-    masodikRend.tetelek_szama=3;
     masodikRend.vegosszeg=5000;
     masodikRend.etelek=NULL;
 
@@ -60,6 +58,11 @@ int main() {
 //    rendelesNyugta(masodikRend);
 
     fomenu_nezet();
+    meglevo_rendelesek_listazasa_menu_nezet();
+    rendeles_menu_nezet();
+    uj_rendeles_menu_nezet();
+    rendeles_lezarasa_menu_nezet();
+    etlap_menu_nezet();
     printf("\n\nLefutottam\n");
     return 0;
 }
