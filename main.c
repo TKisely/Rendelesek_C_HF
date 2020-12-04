@@ -1,10 +1,13 @@
 #include <stdio.h>
-#include "rendeles.h"
+
 #include <string.h>
 #include <time.h>
+
+#include "rendeles.h"
 #include "fajlkezeles.h"
 #include "menu_kezelo.h"
 #include "rendeles_lista.h"
+#include "etel.h"
 
 
 
@@ -80,8 +83,8 @@ int main() {
 
     printf("%d %s %d\n",talalt.id,talalt.nev,talalt.ar);
 
-//    printf("\n=================\n");
-//
+    printf("\n=================\n");
+
 //    rendelesNyugta(elsoRend);
 //    printf("\n=================\n");
 //    rendelesNyugta(masodikRend);
