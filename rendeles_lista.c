@@ -24,6 +24,21 @@ void rendelesek_listazasa(const struct Rendeles_Lista *lista){
 
 }
 
+Rendeles rendeles_asztal_id_alapjan(const struct Rendeles_Lista *lista, unsigned int asztal_id){
+    Rendeles rend;
+    while (lista!=NULL){
+        if (lista->rendeles->asztal_id==asztal_id){
+            printf("\nMEGTALALTAM\n");
+            rend=*lista->rendeles;
+            return rend;
+        }
+        lista=lista->kovetkezo;
+    }
+
+    printf("\nNEM TALALOM\n");
+
+}
+
 unsigned int get_legnagyobb_id(){
     return LEGNAGYOBB_ID;
 }

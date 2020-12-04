@@ -10,6 +10,9 @@ static unsigned int LEGNAGYOBB_ID=0;
 
 void uj_rendeles_felvitele(struct Rendeles_Lista **kezd,struct Rendeles *ujRendeles);
 void rendelesek_listazasa(const struct Rendeles_Lista *lista);
+
+struct Rendeles rendeles_asztal_id_alapjan(const struct Rendeles_Lista *lista, unsigned int asztal_id);
+
 unsigned int get_legnagyobb_id();
 void legnagyobb_id_novelese();
 

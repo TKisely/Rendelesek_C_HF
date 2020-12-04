@@ -90,6 +90,14 @@ int main() {
 
     printf("\n=================\n");
 
+    printf("Keresett asztal szam 5");
+
+    printf("%d a megtalalt", rendeles_asztal_id_alapjan(rendelesekListaja,5).asztal_id);
+
+    etelekListajanakKiirasaKonzolra(rendeles_asztal_id_alapjan(rendelesekListaja,5).etelek);
+
+    printf("\n=================\n");
+
 //    rendelesNyugta(elsoRend);
 //    printf("\n=================\n");
 //    rendelesNyugta(masodikRend);
