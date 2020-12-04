@@ -1,9 +1,8 @@
+#include "etel.h"
 
 #ifndef FAJLKEZELES_H
 #define FAJLKEZELES_H
-#include "rendeles.h"
-#include <string.h>
-#include <time.h>
+
 
 void rendelesFajlbaIras(const Rendeles rend){
 

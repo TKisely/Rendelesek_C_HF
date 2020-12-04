@@ -1,5 +1,7 @@
-#include "rendeles_lista.h"
 
+#include <stdlib.h>
+#include <stdio.h>
+#include "rendeles_lista.h"
 
 void uj_rendeles_felvitele(struct Rendeles_Lista **kezd,struct Rendeles *ujRendeles){
    struct Rendeles_Lista* ujLista=(struct Rendeles_Lista*) malloc(sizeof(struct Rendeles_Lista));

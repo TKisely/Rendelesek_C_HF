@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include "etel.h"
 
 void etelKiirasKonzolra(const Etel etel){

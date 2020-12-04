@@ -1,15 +1,14 @@
+
 #ifndef MENU_KEZELO_H
 #define MENU_KEZELO_H
-#include "menu_nezetek.h"
 
+void uj_rendeles_kezelo(const struct Rendeles_Lista *lista);
 
-void uj_rendeles_kezelo();
+void rendelesek_kezelo(const struct Rendeles_Lista *lista);
 
-void rendelesek_kezelo();
+void fomenu_kezelo(const struct Rendeles_Lista *lista);
 
-void fomenu_kezelo();
-
-void rendeles_kezelo();
+void egy_rendeles_kezelo(int id);
 
 
 #endif //MENU_KEZELO_H

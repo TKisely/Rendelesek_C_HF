@@ -1,8 +1,11 @@
 #include <stdio.h>
+#include "rendeles.h"
+#include <string.h>
+#include <time.h>
 #include "fajlkezeles.h"
-#include "menu_nezetek.h"
 #include "menu_kezelo.h"
 #include "rendeles_lista.h"
+
 
 
 
@@ -18,6 +21,7 @@ int main() {
     masodikRend.id=LEGNAGYOBB_ID++;
     masodikRend.vegosszeg=5000;
     masodikRend.etelek=NULL;
+
 
     Rendeles_Lista* rendelesekListaja=NULL;
 
@@ -45,9 +49,17 @@ int main() {
     hozzaadasEtelekhez(&masodikRend.etelek,&harmadikEtel);
 
     printf("\n=================\n");
+    //Kiirom az elso rendeles eteleit id es ar szerint
     etelekListajanakKiirasaKonzolra(elsoRend.etelek);
+    //Kiirom az elso rendeles vegosszeget
     rendelesVegosszege(elsoRend.etelek);
+
+    printf("\n=================\n");
+
+    //Kiirom az etlapot
     etlapKiirasaKonzolra();
+
+    //Etelt irok ki id alapjan
     etlaprolIDAlapjanKiiras(6);
     etlaprolIDAlapjanKiiras(11);
 
@@ -74,7 +86,7 @@ int main() {
 //    printf("\n=================\n");
 //    rendelesNyugta(masodikRend);
 
-    fomenu_kezelo();
+    fomenu_kezelo(&rendelesekListaja);
 
     printf("\n\nLefutottam\n");
     return 0;
