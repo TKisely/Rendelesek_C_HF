@@ -8,7 +8,7 @@
 
 
 void rendelesKiirasKonzolra(const Rendeles rend){
-    printf("%d id %d asztal %d tetelek %d vegosszeg \n", rend.id, rend.asztal_id, rend.vegosszeg);
+    printf("%d id %d asztal %d tetelek %d vegosszeg \n", rend.id, rend.asztal_id);
 }
 
 

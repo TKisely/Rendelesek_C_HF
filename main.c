@@ -1,3 +1,5 @@
+
+
 #include <stdio.h>
 
 #include <string.h>
@@ -12,17 +14,20 @@
 
 
 
+
 int main() {
+
+
     Rendeles elsoRend;
     elsoRend.asztal_id=5;
-    elsoRend.id=LEGNAGYOBB_ID++;
-    elsoRend.vegosszeg=5000;
+    elsoRend.id=get_legnagyobb_id();
+    legnagyobb_id_novelese();
     elsoRend.etelek=NULL;
 
     Rendeles masodikRend;
-    masodikRend.asztal_id=5;
-    masodikRend.id=LEGNAGYOBB_ID++;
-    masodikRend.vegosszeg=5000;
+    masodikRend.asztal_id=7;
+    masodikRend.id=get_legnagyobb_id();
+    legnagyobb_id_novelese();
     masodikRend.etelek=NULL;
 
 
@@ -89,7 +94,7 @@ int main() {
 //    printf("\n=================\n");
 //    rendelesNyugta(masodikRend);
 
-    fomenu_kezelo(&rendelesekListaja);
+    fomenu_kezelo(rendelesekListaja);
 
     printf("\n\nLefutottam\n");
     return 0;
