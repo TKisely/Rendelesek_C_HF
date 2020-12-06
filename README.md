@@ -90,9 +90,74 @@ static unsigned int LEGNAGYOBB_ID=0;
 
 
 ## Legfontosabb függvények és feladataik
+### etel.h tartalma
+
+```c
+void etelKiirasKonzolra(const Etel etel);
+```
+
+### fajlkezeles.h tartalma
+
+```c
+void rendelesFajlbaIras(const Rendeles rend);
+
+unsigned int etlaprolArIDAlapjan(const unsigned int id);
+
+struct Etel etlaprolEtelIDAlapjan(const unsigned int id);
+
+void etlaprolIDAlapjanKiiras(const unsigned int id);
+
+void etlapKiirasaKonzolra();
+
+void rendelesNyugta(const struct Rendeles rend);
+```
+
+### menu_kezelo.h tartalma
+
+```c
+void uj_rendeles_kezelo(const struct Rendeles_Lista *lista);
+
+void rendelesek_kezelo(const struct Rendeles_Lista *lista);
+
+void fomenu_kezelo(const struct Rendeles_Lista *lista);
+
+void egy_rendeles_kezelo(const struct Rendeles_Lista *lista,int asztal_id);
+
+void etel_hozzaadas_kezelo(const struct Rendeles_Lista *lista, int asztal_id);
+
+void rendeles_lezarasa_kezelo(const struct Rendeles_Lista *lista, int asztal_id);
+```
+
+### rendeles.h tartalma
+
+```c
+void rendelesKiirasKonzolra(const Rendeles rend);
+
+int hozzaadasEtelekhez(struct EtelekListaja **kezd, struct Etel *ujEtel);
+
+int rendelesVegosszege(const struct EtelekListaja *lista);
+
+void etelekListajanakKiirasaKonzolra(const struct EtelekListaja* lista);
+```
+
+### rendeles_lista.h tartalma
+
+```c
+static unsigned int LEGNAGYOBB_ID=0;
+
+void uj_rendeles_felvitele(struct Rendeles_Lista **kezd,struct Rendeles *ujRendeles);
+void rendelesek_listazasa(const struct Rendeles_Lista *lista);
+
+struct Rendeles* rendeles_asztal_id_alapjan(struct Rendeles_Lista *lista, unsigned int asztal_id);
+
+struct EtelekListaja* etelek_listaja_id_alapjan(struct Rendeles_Lista *lista, unsigned int asztal_id);
+
+unsigned int get_legnagyobb_id();
+void legnagyobb_id_novelese();
+```
 
 ## Példa sorok
-#### Étlapról
+### Étlapról
 
 1 Husleves 500
 
@@ -102,7 +167,7 @@ static unsigned int LEGNAGYOBB_ID=0;
 
 4 Hamburger 1100
 
-#### Nyugtáról
+### Nyugtáról
 
 2 - Szamu rendeles		 2020_12_06_15_14-kor lezarva
 
