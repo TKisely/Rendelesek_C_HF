@@ -181,3 +181,14 @@ Bableves 	 700
 
 Vegosszeg: 	 3500
 
+## Egyéb információk
+### Használt IDE
+CLion by Jetbrains 2020.2.3 verzió.
+A választásom azért esett erre az IDE-re, mert évekkel ezelőtt ezt használtam, akkor jók voltak a tapasztalataim, továbbá az általam használt OS nem tud több instance-t kezelni a VSCode-ból, amiatt a más nyelvekhez használt egyedi snippet-ek megnehezítették volna a munkám.
+Sajnos - a következő fejezetben taglalt problémák miatt - nem biztos, hogy ez volt a megfelelő választás.
+
+### Felmerült problémák
+Az általam használt IDE jelenlegi verziója képtelen volt Debug módra, emiatt minden egyes hiba rengeteg időt vett el, hogy pontosan át tudjam gondolni, továbbá szintén az IDE hibájának tartom azt, hogy minden fordításnál Warning-nak jelzi a magyar nyelvből fakadó "elütéseket", így fordításnál nehéz megtalálni a tényleg fontos Warning-okat és Error-okat. 
+
+### További teendők
+A program a jelenlegi verziójában elvárja a felhasználótól, hogy megfelelő billentyűket üssön, emiatt, bár képes jelezni, ha HIBÁS bemenetet kap, lekezelni még nem tudja.
