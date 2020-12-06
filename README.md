@@ -53,5 +53,54 @@ A tovább .c - és természetesen a hozzájuk tartozó .h fájlok - felelnek a p
 A szöveges fájlok két funkciót látnak el, egyrészt az etlap.txt tartalmazza az ételek listáját ( ID NÉV ÁR formátumban), míg a nyugta a program zárásakor jön létre, melynek neve az ID_ÉV_HÓNAP_NAP_ÓRA_PERC.txt formátumot követi, a tartalmát tekintve pedig rendelt ételeket árral, a végösszeget és a nyugta címéből kiolvasható adatokat.
 
 ## Adatszerkezetek
+1. Étel felépítése:
+```c
+typedef struct Etel {
+    unsigned int id;
+    char nev[50];
+    int ar;
+} Etel;
+```
+2. Egy rendelés felépítése
+```c
+typedef struct Rendeles {
+    unsigned int id;
+    unsigned int asztal_id;
+    struct EtelekListaja *etelek;
+} Rendeles;
+```
+
+3. Ételek listába szervezése
+```c
+typedef struct EtelekListaja{
+    struct Etel *etel;
+    struct EtelekListaja *kovetkezo;
+}EtelekListaja;
+```
+
+4. Rendelések listába szervezése
+```c
+typedef struct Rendeles_Lista {
+    struct Rendeles *rendeles;
+    struct Rendeles_Lista *kovetkezo;
+} Rendeles_Lista;
+
+static unsigned int LEGNAGYOBB_ID=0;
+```
+
 
 ## Legfontosabb függvények és feladataik
+
+## Példa sorok
+#### Étlapról 
+1 Husleves 500
+2 Gyumolcsleves 450
+3 Bableves 700
+4 Hamburger 1100
+#### Nyugtáról
+2 - Szamu rendeles		 2020_12_06_15_14-kor lezarva
+
+Tokany 	 2500
+Rizs 	 300
+Bableves 	 700
+Vegosszeg: 	 3500
