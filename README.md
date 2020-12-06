@@ -203,26 +203,47 @@ Mivel minden rendeléshez egyedi azonosító szükséges, ezért létre kellett 
 
 ## Példa inputok teszteléshez
 A program futtatásakor a főmenü fogadja a felhasználót.
+
 Válasszuk az új rendelés menüpontot, hisz még nincs megkezdett rendelésünk. Ehhez nyomjuk meg az 1-est a billentyűzeten (továbbiakban: ```input 1```), vagy nyomjunk egy entert.
+
 Ekkor meg kell adnunk a rendelés asztalát, vagy visszaléphetünk ```input 0``` segítségével. Mi válasszuk az asztal megadását, legyen ez a kilences asztal, tehát ```input 9```.
+
 Ezt követően megjelenik a Rendelések szerkesztése nézet. Itt vagy lezárhatjuk a rendelést (ekkor Nyugta készül a jelenlegi állapotáról), vagy ételt adhatunk hozzá. Mivel még nincs étel a rendelésben, ezért adjunk hozzá ételeket. ```input 1```
+
 Meglátjuk az étlapot. Válasszuk ki a Bablevest: ```input 3```
+
 Már láthatjuk is a Rendelés szerkesztőben, hogy az aktuális rendelés tartalmaz egy Ételt, amely a 700 Ft-os Bableves.
+
 Adjunk hozzá főételt is: ```input 1``` majd ```input 5```.
+
 Ekkor már Borsófőzelék és Bableves is látható a rendelésben, mindig a legfrissebb tétel a lista elején.
 
+
 Hozzunk létre másik rendelést is, ehhez előbb lépjünk vissza ```input 0```, majd ```input 1``` és az asztalunk legyen a négyes ```input 4```.
+
 Adjunk hozzá pár ételt: ```input 1```, ```input 2```, ```input 1```, ```input 4```, ```input 1```, ```input 7```.
+
 Ekkor a négyes asztalhoz tartozó rendelésünk tartalmaz egy Gyümölcslevest, egy Hamburgert és egy adag Hasábot. Ezek adatait listázza.
+
 Lépjünk vissza egyet ```input 0```.
+
 Listázzuk ki a Nyitott rendeléseket az ```input 2``` segítségével.
+
 Láthatjuk, hogy két -egyedi azonosítókkal ellátott- rendelésünk van, az egyik a négyes asztalnál, a másik a kilences asztalnál.
+
 Zárjuk le a négyes, majd a kilences rendelést is.
+
 Ehhez előbb ```input 4```. Ekkor megnyílik a rendelésünk és láthatjuk az adatait, majd ```input 2```.
+
 Ekkor ismét a főmenüben találjuk magunkat.
+
 Listázzuk a rendeléseinket ```input 2```, majd a kilences asztalt megadva zárjuk a rendelést : ```input 9```, ```input 2```.
+
 Ezt követően zárjuk a programot. ```input 0```
+
 A két fájl megtalálható az egyedi azonosítóikkal és a zárás dátumával a fájlok között .txt formátumban.
+
+
 
 ## Példa sorok
 ### Étlapról
