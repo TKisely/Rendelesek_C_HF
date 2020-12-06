@@ -204,7 +204,7 @@ Mivel minden rendeléshez egyedi azonosító szükséges, ezért létre kellett 
 ## Példa inputok teszteléshez
 A program futtatásakor a főmenü fogadja a felhasználót.
 
-Válasszuk az új rendelés menüpontot, hisz még nincs megkezdett rendelésünk. Ehhez nyomjuk meg az 1-est a billentyűzeten (továbbiakban: ```input 1```), vagy nyomjunk egy entert.
+Válasszuk az új rendelés menüpontot, hisz még nincs megkezdett rendelésünk. Ehhez nyomjuk meg az 1-est a billentyűzeten (továbbiakban: ```input 1```), majd nyomjunk egy entert.
 
 Ekkor meg kell adnunk a rendelés asztalát, vagy visszaléphetünk ```input 0``` segítségével. Mi válasszuk az asztal megadását, legyen ez a kilences asztal, tehát ```input 9```.
 
@@ -271,7 +271,9 @@ Vegosszeg: 	 3500
 ## Egyéb információk
 ### Használt IDE
 CLion by Jetbrains 2020.2.3 verzió.
+
 A választásom azért esett erre az IDE-re, mert évekkel ezelőtt ezt használtam, akkor jók voltak a tapasztalataim, továbbá az általam használt OS nem tud több instance-t kezelni a VSCode-ból, amiatt a más nyelvekhez használt egyedi snippet-ek megnehezítették volna a munkám.
+
 Sajnos - a következő fejezetben taglalt problémák miatt - nem biztos, hogy ez volt a megfelelő választás.
 
 ### Felmerült problémák
