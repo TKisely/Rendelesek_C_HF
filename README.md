@@ -92,15 +92,25 @@ static unsigned int LEGNAGYOBB_ID=0;
 ## Legfontosabb függvények és feladataik
 
 ## Példa sorok
-#### Étlapról 
+#### Étlapról
+
 1 Husleves 500
+
 2 Gyumolcsleves 450
+
 3 Bableves 700
+
 4 Hamburger 1100
+
 #### Nyugtáról
+
 2 - Szamu rendeles		 2020_12_06_15_14-kor lezarva
 
 Tokany 	 2500
+
 Rizs 	 300
+
 Bableves 	 700
+
 Vegosszeg: 	 3500
+
