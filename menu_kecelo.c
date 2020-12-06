@@ -54,8 +54,17 @@ void uj_rendeles_kezelo(const struct Rendeles_Lista *lista){
 }
 
 void rendelesek_kezelo(const struct Rendeles_Lista *lista){
+    int valasz;
+
     meglevo_rendelesek_listazasa_menu_nezet();
-    //TODO: Rendelesek listazasa
+
+    rendelesek_listazasa(lista);
+    scanf("%d",&valasz);
+    if (valasz!=0)
+        egy_rendeles_kezelo(lista,valasz);
+    else
+        fomenu_kezelo(lista);
+
     return;
 }
 

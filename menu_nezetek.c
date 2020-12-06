@@ -13,9 +13,6 @@ void meglevo_rendelesek_listazasa_menu_nezet(){
     printf(ANSI_COLOR_GREEN"\n\t\tAKTIV RENDELESEK"ANSI_COLOR_RESET"\n");
     printf( ANSI_COLOR_MAGENTA"Kerem valasszon a RENDELESEK kozul:" ANSI_COLOR_RESET "\n\n");
 
-    //TODO: Rendelesek listazasa
-    printf( ANSI_COLOR_YELLOW"[1] - " ANSI_COLOR_RESET "\n");
-    printf( ANSI_COLOR_YELLOW"[2] - " ANSI_COLOR_RESET "\n");
     printf( ANSI_COLOR_RED"\n[0] - Kilepes" ANSI_COLOR_RESET "\n");
 
 }
