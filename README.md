@@ -147,29 +147,55 @@ A main.c -ben létrehozott listát a kezelőnek átadva képesek vagyunk az öss
 
 ```c
 void rendelesKiirasKonzolra(const Rendeles rend);
+```
+Egy adott rendelés adatait írja ki a konzolra.
 
+```c
 int hozzaadasEtelekhez(struct EtelekListaja **kezd, struct Etel *ujEtel);
+```
+Egy rendelés étel listáját átadba hozzáadhatunk egy új rendelt ételt.
 
+```c
 int rendelesVegosszege(const struct EtelekListaja *lista);
+```
+Egy rendelés ételeinek listáját átadva megmondja, hogy mennyi a rendelés végösszege.
 
+```c
 void etelekListajanakKiirasaKonzolra(const struct EtelekListaja* lista);
 ```
+Megfelelő formátumban kizrja egy rendelés ételeinek a listáját.
+
+Mivel az utolsó 3 függvénynél csak és kizárólag az ételek listáját kezeljük, ezért felesleges átadni a teljes rendelést, emiatt meghívásukkor ügyelni kell arra, hogy ne a rendelést adjuk, hanem a ```c rendeles->etelek```  listáját.
 
 ### rendeles_lista.h tartalma
 
 ```c
-static unsigned int LEGNAGYOBB_ID=0;
-
 void uj_rendeles_felvitele(struct Rendeles_Lista **kezd,struct Rendeles *ujRendeles);
+```
+A rendelések listájára új rendelést visz fel.
+
+```c
 void rendelesek_listazasa(const struct Rendeles_Lista *lista);
+```
+Megfelelő formátumban listázza a rendeléseket.
 
+```c
 struct Rendeles* rendeles_asztal_id_alapjan(struct Rendeles_Lista *lista, unsigned int asztal_id);
+```
+Visszaadja a kívánt asztalhoz tartozó legfrissebb rendelést.
 
+```c
 struct EtelekListaja* etelek_listaja_id_alapjan(struct Rendeles_Lista *lista, unsigned int asztal_id);
+```
+Visszaadja a rendelések listájáról egy adott asztalhoz tartozó rendelés ételeinek listáját.
+
+```c
+static unsigned int LEGNAGYOBB_ID=0;
 
 unsigned int get_legnagyobb_id();
 void legnagyobb_id_novelese();
 ```
+Mivel minden rendeléshez egyedi azonosító szükséges, ezért létre kellett hoznom egy statikus ID számláló változót, melyet a fenti függvények segítségével tudok lekérdezni és változtani.
 
 ## Példa sorok
 ### Étlapról
