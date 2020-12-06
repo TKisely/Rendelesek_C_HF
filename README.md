@@ -97,22 +97,34 @@ Minden függvény esetn próbáltam a legbeszédesebb neveket kitalálni, mivel 
 ```c
 void etelKiirasKonzolra(const Etel etel);
 ```
+Mivel alapvetően az ételeken nem szeretnénk módosítani, így azokat csak kiírnunk, vagy az étlapról felolvasnunk kell. Az utóbbi, mivel fájlból való olvasást tartalmaz, így a fájlkezeléshez került, így itt erre az egy függvényre van csak szükség.
 
 ### fajlkezeles.h tartalma
 
 ```c
 void rendelesFajlbaIras(const Rendeles rend);
+```
+A megfelelő formázással a teljes rendelést (a rendelés által tartalmazott ételekkel együtt) a megfelelő fájlba írja.
 
+```c
 unsigned int etlaprolArIDAlapjan(const unsigned int id);
 
 struct Etel etlaprolEtelIDAlapjan(const unsigned int id);
 
 void etlaprolIDAlapjanKiiras(const unsigned int id);
+```
+Mivel az étlap nincs a programba kódolva, hanem egy külön fájl tartalmazza, emiatt minden egyes alkalommal onnan kerülnek kiolvasásra a megfelelő adatok. Ezt megtehetjük adatonként, vagy akár az egész ételt is kiírhatjuk a konzolra, vagy egy "Etel"-be csomagolva vissza is adhatjuk
 
+```c
 void etlapKiirasaKonzolra();
+```
+Rendelés esetén, amennyiben új ételt akarunk hozzáadni szükségünk van a teljes étlap ismeretére. Ezt az etlap.txt fájlból függvény segítségével kell kiolvasnunk.
 
+```c
 void rendelesNyugta(const struct Rendeles rend);
 ```
+Minden egyes rendelés lezárása azzal végződik, hogy a rendelésről számla (jelen esetben egy képzeletbeli nyugta) készül. Ennek, az elkészített egyedi fájlnak a megnevezése és a tartalma is a függvény által generálódik.
+
 
 ### menu_kezelo.h tartalma
 
@@ -129,6 +141,7 @@ void etel_hozzaadas_kezelo(const struct Rendeles_Lista *lista, int asztal_id);
 
 void rendeles_lezarasa_kezelo(const struct Rendeles_Lista *lista, int asztal_id);
 ```
+A main.c -ben létrehozott listát a kezelőnek átadva képesek vagyunk az összes funkciót ellátni. A Nézeteke és a kezelők természetesen külön vannak bontva.
 
 ### rendeles.h tartalma
 
