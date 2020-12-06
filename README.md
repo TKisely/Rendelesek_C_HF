@@ -90,6 +90,8 @@ static unsigned int LEGNAGYOBB_ID=0;
 
 
 ## Legfontosabb függvények és feladataik
+Minden függvény esetn próbáltam a legbeszédesebb neveket kitalálni, mivel az IDE segítségével így lényegesen gyorsabban megtalálhattam a szükséges függvényeket.
+
 ### etel.h tartalma
 
 ```c
