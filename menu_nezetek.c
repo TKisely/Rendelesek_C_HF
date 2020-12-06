@@ -18,7 +18,7 @@ void meglevo_rendelesek_listazasa_menu_nezet(){
 }
 
 void rendeles_eteleinek_listazasa_menu_nezet(){
-    //TODO: Etelek listazasa
+    //TODO: Etelek szines listazasa
     printf( ANSI_COLOR_YELLOW"ETEL" ANSI_COLOR_RESET "\n");
     printf( ANSI_COLOR_YELLOW"ETEL" ANSI_COLOR_RESET "\n");
 }
