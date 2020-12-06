@@ -43,14 +43,14 @@ A program különböző fájlokra lett bontva:
 A main.c kizárólag azért felel, hogy elindítsa a kódot és létrehozza az üres listát a később rendelések tárolására.
 
 A tovább .c - és természetesen a hozzájuk tartozó .h fájlok - felelnek a program tényleges megvalósításáért.
-* etel.c és etel.h fájlok felelnek az étel adatszerkezet megvalósításáért
-* fajlkezeles.c és fajlkezeles.h fájlok felelnek elsősorban az étlappal való kapcsolatért és nyugta fájlba írásáért
-* menu_kezelo.c és menu_kezelo.h fájlok felelnek a menüért, amely meghívja a tényleges funkciókhoz tartozó metódusokat, így ők biztosítják a kapcsolatot a felhasználó és a program között
-* menu_nezet_szinek.h felel a színezés könnyebbé tételéért, a színek vannak benne előre definiálva
-* rendeles.c és rendeles.h fájlok felelnek az egyetlen rendeléshez tartozó funkciók megvalósításáért
-* rendeles_lista.c és rendeles_lista.h fájlok felelnek a rendelések listaként való kezeléséért
+* ```etel.c``` és ```etel.h``` fájlok felelnek az étel adatszerkezet megvalósításáért
+* ```fajlkezeles.c``` és ```fajlkezeles.h``` fájlok felelnek elsősorban az étlappal való kapcsolatért és nyugta fájlba írásáért
+* ```menu_kezelo.c``` és ```menu_kezelo.h``` fájlok felelnek a menüért, amely meghívja a tényleges funkciókhoz tartozó metódusokat, így ők biztosítják a kapcsolatot a felhasználó és a program között
+* ```menu_nezet_szinek.h``` felel a színezés könnyebbé tételéért, a színek vannak benne előre definiálva
+* ```rendeles.c``` és ```rendeles.h``` fájlok felelnek az egyetlen rendeléshez tartozó funkciók megvalósításáért
+* ```rendeles_lista.c``` és ```rendeles_lista.h``` fájlok felelnek a rendelések listaként való kezeléséért
 
-A szöveges fájlok két funkciót látnak el, egyrészt az etlap.txt tartalmazza az ételek listáját ( ID NÉV ÁR formátumban), míg a nyugta a program zárásakor jön létre, melynek neve az ID_ÉV_HÓNAP_NAP_ÓRA_PERC.txt formátumot követi, a tartalmát tekintve pedig rendelt ételeket árral, a végösszeget és a nyugta címéből kiolvasható adatokat.
+A szöveges fájlok két funkciót látnak el, egyrészt az etlap.txt tartalmazza az ételek listáját (```ID NÉV ÁR``` formátumban), míg a nyugta a program zárásakor jön létre, melynek neve az ```ID_ÉV_HÓNAP_NAP_ÓRA_PERC.txt``` formátumot követi, a tartalmát tekintve pedig rendelt ételeket árral, a végösszeget és a nyugta címéből kiolvasható adatokat.
 
 ## Adatszerkezetek
 1. Étel felépítése:
@@ -61,6 +61,8 @@ typedef struct Etel {
     int ar;
 } Etel;
 ```
+Minden étel tartalmaz egy egyedi azonosítót, egy nevet (maximalizálva van 50 karakterben), és egy árat.
+
 2. Egy rendelés felépítése
 ```c
 typedef struct Rendeles {
@@ -69,6 +71,7 @@ typedef struct Rendeles {
     struct EtelekListaja *etelek;
 } Rendeles;
 ```
+Minden rendelés tartalmaz egy egyedi azonosítót, egy asztal számot és a hozzá tartozó ételeinek listáját (avagy a megrendelt ételek listáját).
 
 3. Ételek listába szervezése
 ```c
@@ -77,6 +80,7 @@ typedef struct EtelekListaja{
     struct EtelekListaja *kovetkezo;
 }EtelekListaja;
 ```
+Ez a segéd struktúra az ételek listában való kezelését teszi lehetővé egyszeres láncolással.
 
 4. Rendelések listába szervezése
 ```c
@@ -84,9 +88,9 @@ typedef struct Rendeles_Lista {
     struct Rendeles *rendeles;
     struct Rendeles_Lista *kovetkezo;
 } Rendeles_Lista;
-
-static unsigned int LEGNAGYOBB_ID=0;
 ```
+Ez a struktúra fugja össze a kód további struktúráit. Rendeléseket tartalmaz egyszeres láncolással, így összességében egy fésűs listáról beszélhetünk, mivel a rendelések listája listákat tartalmaz ( rendelések - ételek ).
+A ```main.c``` fájlban egy, a listára mutató pointert hozunk létre, majd az egész futás alatt csak erre hivatkozva kezeljük a tárolt adatokat.
 
 
 ## Legfontosabb függvények és feladataik
@@ -165,7 +169,7 @@ void etelekListajanakKiirasaKonzolra(const struct EtelekListaja* lista);
 ```
 Megfelelő formátumban kizrja egy rendelés ételeinek a listáját.
 
-Mivel az utolsó 3 függvénynél csak és kizárólag az ételek listáját kezeljük, ezért felesleges átadni a teljes rendelést, emiatt meghívásukkor ügyelni kell arra, hogy ne a rendelést adjuk, hanem a ```c rendeles->etelek```  listáját.
+Mivel az utolsó 3 függvénynél csak és kizárólag az ételek listáját kezeljük, ezért felesleges átadni a teljes rendelést, emiatt meghívásukkor ügyelni kell arra, hogy ne a rendelést adjuk, hanem a ```rendeles->etelek```  listáját.
 
 ### rendeles_lista.h tartalma
 
