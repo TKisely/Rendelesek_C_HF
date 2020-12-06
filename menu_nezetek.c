@@ -32,10 +32,9 @@ void rendeles_menu_nezet(){
     printf( ANSI_COLOR_BLUE"[1] - Etel hozzaadasa" ANSI_COLOR_RESET "\n");
     printf( ANSI_COLOR_BLUE"[2] - Rendeles lezarasa" ANSI_COLOR_RESET "\n");
 
-    //TODO: Etelek listazasa
-    rendeles_eteleinek_listazasa_menu_nezet();
-
     printf( ANSI_COLOR_RED"\n[0] - Kilepes" ANSI_COLOR_RESET "\n");
+
+    printf( ANSI_COLOR_YELLOW"Eddig felvitt etelek:" ANSI_COLOR_RESET "\n");
 }
 
 void uj_rendeles_menu_nezet(){
@@ -52,13 +51,8 @@ void rendeles_lezarasa_menu_nezet(){
 
 void etlap_menu_nezet(){
     printf(ANSI_COLOR_GREEN"\n\t\tETLAP"ANSI_COLOR_RESET"\n");
-    printf( ANSI_COLOR_MAGENTA"Az alabbi etelek kozul valaszthat:" ANSI_COLOR_RESET "\n\n");
-
-    //TODO: Etlap listaja
-    printf( ANSI_COLOR_YELLOW"ETEL" ANSI_COLOR_RESET "\n");
-    printf( ANSI_COLOR_YELLOW"ETEL" ANSI_COLOR_RESET "\n");
-
     printf( ANSI_COLOR_RED"\n[0] - Kilepes" ANSI_COLOR_RESET "\n");
+    printf( ANSI_COLOR_MAGENTA"Az alabbi etelek kozul valaszthat:" ANSI_COLOR_RESET "\n\n");
 
 }
 

@@ -3,6 +3,7 @@
 #include "etel.h"
 
 #include "rendeles.h"
+#include "fajlkezeles.h"
 
 
 
@@ -37,6 +38,7 @@ int rendelesVegosszege(const struct EtelekListaja *lista){
 void etelekListajanakKiirasaKonzolra(const struct EtelekListaja* lista){
     while (lista!=NULL){
         etelKiirasKonzolra(*lista->etel);
+        etlaprolIDAlapjanKiiras(lista->etel->id);
         lista=lista->kovetkezo;
     }
 }

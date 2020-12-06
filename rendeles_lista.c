@@ -24,19 +24,28 @@ void rendelesek_listazasa(const struct Rendeles_Lista *lista){
 
 }
 
-Rendeles rendeles_asztal_id_alapjan(const struct Rendeles_Lista *lista, unsigned int asztal_id){
-    Rendeles rend;
+Rendeles* rendeles_asztal_id_alapjan(struct Rendeles_Lista *lista, unsigned int asztal_id){
     while (lista!=NULL){
         if (lista->rendeles->asztal_id==asztal_id){
-            printf("\nMEGTALALTAM\n");
-            rend=*lista->rendeles;
-            return rend;
+
+            return lista->rendeles;
         }
         lista=lista->kovetkezo;
     }
 
     printf("\nNEM TALALOM\n");
 
+}
+
+EtelekListaja* etelek_listaja_id_alapjan(struct Rendeles_Lista *lista, unsigned int asztal_id){
+    while (lista!=NULL){
+        if (lista->rendeles->asztal_id==asztal_id){
+            return lista->rendeles->etelek;
+        }
+        lista=lista->kovetkezo;
+    }
+
+    printf("\nNEM TALALOM\n");
 }
 
 unsigned int get_legnagyobb_id(){

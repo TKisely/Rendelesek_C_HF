@@ -58,6 +58,7 @@ int main() {
 
     printf("\n=================\n");
     //Kiirom az elso rendeles eteleit id es ar szerint
+    printf("\nITT IROM KI AZ ELSO RENDELES ETELEIT\n");
     etelekListajanakKiirasaKonzolra(elsoRend.etelek);
     //Kiirom az elso rendeles vegosszeget
     rendelesVegosszege(elsoRend.etelek);
@@ -88,19 +89,28 @@ int main() {
 
     printf("%d %s %d\n",talalt.id,talalt.nev,talalt.ar);
 
-    printf("\n=================\n");
-
-    printf("Keresett asztal szam 5");
-
-    printf("%d a megtalalt", rendeles_asztal_id_alapjan(rendelesekListaja,5).asztal_id);
-
-    etelekListajanakKiirasaKonzolra(rendeles_asztal_id_alapjan(rendelesekListaja,5).etelek);
+//    printf("\n=================\n");
+//
+//    printf("Keresett asztal szam 5");
+//
+//    printf("%d a megtalalt", rendeles_asztal_id_alapjan(rendelesekListaja,5).asztal_id);
+//
+//    etelekListajanakKiirasaKonzolra(rendeles_asztal_id_alapjan(rendelesekListaja,5).etelek);
 
     printf("\n=================\n");
 
 //    rendelesNyugta(elsoRend);
 //    printf("\n=================\n");
 //    rendelesNyugta(masodikRend);
+
+    printf("\nITT IROM KI AZ ID-t ASZTALID ALAPJAN\n");
+    printf("%d\n",rendeles_asztal_id_alapjan(rendelesekListaja,5)->etelek->etel->ar);
+    hozzaadasEtelekhez(&rendeles_asztal_id_alapjan(rendelesekListaja,5)->etelek,&masodikEtel);
+    hozzaadasEtelekhez(&rendeles_asztal_id_alapjan(rendelesekListaja,5)->etelek,&masodikEtel);
+    etelekListajanakKiirasaKonzolra(rendeles_asztal_id_alapjan(rendelesekListaja,5)->etelek);
+
+    etelekListajanakKiirasaKonzolra(etelek_listaja_id_alapjan(rendelesekListaja,5));
+
 
     fomenu_kezelo(rendelesekListaja);
 

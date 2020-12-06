@@ -75,7 +75,7 @@ void etlaprolIDAlapjanKiiras(const unsigned int id){
     if (fajl==NULL){
         printf("Nem sikerult az etlap megnyitasa!\n");
     } else{
-        printf("Az etlap megnyilt...\n");
+//        printf("Az etlap megnyilt...\n");
         while(fgets(sor,maxSorhossz,fajl)){
             sscanf(sor,"%d %s %d",&aktID,nev,&ar);
             if (aktID==id){
