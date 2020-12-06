@@ -1,19 +1,6 @@
-
-
 #include <stdio.h>
-
-#include <string.h>
-#include <time.h>
-
-#include "rendeles.h"
-#include "fajlkezeles.h"
-#include "menu_kezelo.h"
 #include "rendeles_lista.h"
-#include "etel.h"
-
-
-
-
+#include "menu_kezelo.h"
 
 int main() {
 
